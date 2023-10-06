@@ -6,6 +6,6 @@ const config = {
 	},
 };
 
-const url = 'https://we-grow-model.herokuapp.com/predict';
+const url = process.env.Ml_Model_Url;
 
 export const predictOptimumCrop = data => axios.post(url, data, config);

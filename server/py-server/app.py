@@ -16,6 +16,11 @@ app = Flask(__name__)
 
 CORS(app)
 
+@app.route("/", methods=['GET'])
+@cross_origin
+def serverStatus():
+    return jsonify({'success': True, 'Message': 'ML model server is running'}), 200
+
 # Render optimum crop prediction page
 @app.route("/predict", methods=["POST"])
 @cross_origin()
