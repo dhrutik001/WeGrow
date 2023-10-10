@@ -16,8 +16,8 @@ app = Flask(__name__)
 
 CORS(app)
 
-@app.route("/", methods=['GET'])
-@cross_origin
+@app.route('/', methods=['GET'])
+@cross_origin()
 def serverStatus():
     return jsonify({'success': True, 'Message': 'ML model server is running'}), 200
 
@@ -49,4 +49,4 @@ def predictOptimumCrop():
 
 if __name__ == "__main__":
     print("Starting Python Flask Server")
-    app.run()
+    app.run(debug=False)
